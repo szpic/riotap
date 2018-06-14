@@ -4,16 +4,17 @@ using my_new_app.RiotConnector.Endpoints;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace my_new_app.Controllers
 {
     [Route("api/[controller]")]
-    public class ChampionsListController : Controller
+    public class ChallengersListController:Controller
     {
         [HttpGet("[action]")]
-        public async Task<ChampionDto> getChampionData()
+        public async Task<LeagueListDTO> GetChallengers()
         {
-            ChampionEndPoint endpoint = new ChampionEndPoint();
-            return await endpoint.GetChampionData();
+            ChallengersEndPoint endPoint = new ChallengersEndPoint();
+            return await endPoint.GetPlayersData();
         }
     }
 }
