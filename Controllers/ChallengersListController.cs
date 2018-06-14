@@ -14,7 +14,6 @@ namespace my_new_app.Controllers
         public async Task<LeagueListDTO> GetChallengers()
         {
             ChallengersEndPoint endPoint = new ChallengersEndPoint();
-
             return await endPoint.GetPlayersData();
         }
     }
