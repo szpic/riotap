@@ -11,7 +11,7 @@ namespace my_new_app.RiotConnector.Endpoints
 {
     public class ChampionEndPoint
     {
-        protected string url = @"https://eun1.api.riotgames.com/lol/static-data/v3/champions/1?locale=pl_PL&champData=info&champData=lore&tags=info&tags=lore&api_key=RGAPI-f2403e97-d156-4356-a16e-ebf28fb71435";
+        protected string url = @"https://eun1.api.riotgames.com/lol/static-data/v3/champions/1?locale=pl_PL&champData=info&champData=lore&tags=info&tags=lore";
         protected RiotApiRequest client = new RiotApiRequest();
 
         public async Task<ChampionDto> GetChampionData()

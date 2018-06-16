@@ -1,0 +1,23 @@
+<h1>Challengers list</h1>
+
+<p *ngIf="!challengerlist"><em>Loading...</em></p>
+<table class='table' *ngIf="challengerlist">
+  <thead>
+    <tr>
+      <th>Player Name</th>
+      <th>Points</th>
+      <th>Wins</th>
+      <th>Losses</th>
+      <th>Win percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let player of challengerlist.entries">
+      <td>{{ player.playerOrTeamName }}</td>
+      <td>{{ player.leaguePoints }}</td>
+      <td>{{ player.wins }}</td>
+      <td>{{ player.losses }}</td>
+      <td>{{ (player.wins / (player.wins + player.losses))*100}}%</td>
+    </tr>
+  </tbody>
+</table>
