@@ -13,7 +13,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let player of challengerlist.entries">
-      <td>{{ player.playerOrTeamName }}</td>
+      <td><a [routerLink]="['/summoner', player.playerOrTeamName]">{{ player.playerOrTeamName }}</a></td>
       <td>{{ player.leaguePoints }}</td>
       <td>{{ player.wins }}</td>
       <td>{{ player.losses }}</td>

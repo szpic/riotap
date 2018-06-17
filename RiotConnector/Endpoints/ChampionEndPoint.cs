@@ -9,10 +9,9 @@ using System.Threading.Tasks;
 
 namespace my_new_app.RiotConnector.Endpoints
 {
-    public class ChampionEndPoint
+    public class ChampionEndPoint : BaseEndPoint
     {
-        protected string url = @"https://eun1.api.riotgames.com/lol/static-data/v3/champions/1?locale=pl_PL&champData=info&champData=lore&tags=info&tags=lore";
-        protected RiotApiRequest client = new RiotApiRequest();
+        public ChampionEndPoint() => Url = @"https://eun1.api.riotgames.com/lol/static-data/v3/champions/1?locale=pl_PL&champData=info&champData=lore&tags=info&tags=lore";
 
         public async Task<ChampionDto> GetChampionData()
         {

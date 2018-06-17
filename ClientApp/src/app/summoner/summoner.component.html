@@ -1,0 +1,8 @@
+<h1>Summoner data</h1>
+
+<p *ngIf="!summoner"><em>Loading...</em></p>
+<p *ngIf="summoner">
+  Summoner name: {{summoner.name}}<br />
+  Summoner accountId: {{summoner.accountId}}<br />
+  Summoner level: {{summoner.summonerLevel}} <br />
+</p>

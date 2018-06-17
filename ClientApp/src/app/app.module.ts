@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ChallengersComponent } from './challengers/challengers.component';
+import { SummonerComponent } from './summoner/summoner.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ChallengersComponent } from './challengers/challengers.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ChallengersComponent
+    ChallengersComponent,
+    SummonerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,6 +31,7 @@ import { ChallengersComponent } from './challengers/challengers.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'challengers', component: ChallengersComponent },
+      { path: 'summoner/:id', component: SummonerComponent },
     ])
   ],
   providers: [],

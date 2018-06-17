@@ -45,6 +45,10 @@ namespace my_new_app
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "summoner",
+                    template: "summoner/{action}/{name}");
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
             });
