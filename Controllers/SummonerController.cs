@@ -14,7 +14,17 @@ namespace my_new_app.Controllers
         public async Task<SummonerDTO> GetSummonerData(string name)
         {
             SummonerEndPoint endPoint = new SummonerEndPoint();
-            return await endPoint.GetSummonerData(name);
+            Task<SummonerDTO> data =  endPoint.GetSummonerData(name);
+            var readed = await data;
+            MatchesEndPoint endPoint2 = new MatchesEndPoint();
+            var data2 = endPoint2.GetMatches(data.Result.accountId.ToString());
+            var readed2 = await data2;
+            return await TestMethod();
+        }
+        public async Task<SummonerDTO> TestMethod()
+        {
+            return await Task.Run(() => { return new SummonerDTO { name = "testName", summonerLevel = 123, accountId = 1, id = 2, profileIconId = 3 }; });
         }
     }
 }
+
