@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit, OnDestroy} from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -12,7 +12,7 @@ import { switchMap } from 'rxjs/operators';
 export class SummonerComponent implements OnInit, OnDestroy{
   public summoner: any;
   public summonerName: string;
-  public sub: Observable;
+  public sub: Subscription;
 
   constructor(
     http: HttpClient,

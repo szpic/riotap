@@ -47,6 +47,9 @@ namespace my_new_app
                 routes.MapRoute(
                     name: "summoner",
                     template: "summoner/{action}/{name}");
+                routes.MapRoute(
+                   name: "matches",
+                   template: "matches/{action}/{name}");
 
                 routes.MapRoute(
                     name: "default",
