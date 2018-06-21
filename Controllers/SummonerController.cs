@@ -11,7 +11,7 @@ namespace my_new_app.Controllers
     public class SummonerController : Controller
     {
         [HttpGet("[action]/{name}")]
-        public async Task<SummonerDTO> GetSummonerData(string name)
+        public async Task<FullSummonerDto> GetSummonerData(string name)
         {
             SummonerEndPoint endPoint = new SummonerEndPoint();
             SummonerDTO summonerData=  await endPoint.GetSummonerData(name);
@@ -19,14 +19,15 @@ namespace my_new_app.Controllers
             MatchListDto matchesData =  await endPoint2.GetMatches(summonerData.accountId.ToString());
             return await TestMethod(summonerData, matchesData);
         }
-        public async Task<SummonerDTO> TestMethod(SummonerDTO summonerData, MatchListDto matchData)
+        public async Task<FullSummonerDto> TestMethod(SummonerDTO summonerData, MatchListDto matchData)
         {
             return await Task.Run(() => {
-                return new SummonerDTO {
-                    name = "testName",
-                    summonerLevel = 123,
-                    accountId = 1, id = 2,
-                    profileIconId = 3 }; });
+                return new FullSummonerDto
+                {
+                    summoner = summonerData,
+                    matches = matchData
+                };
+            });
         }
     }
 }

@@ -6,3 +6,25 @@
   Summoner accountId: {{summoner.accountId}}<br />
   Summoner level: {{summoner.summonerLevel}} <br />
 </p>
+<div  *ngIf="summoner.matches">
+  <p> Match history</p>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Lane</th>
+        <th>Champion</th>
+        <th>Queue</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let match of summoner.matches.matches">
+        <td>{{ match.lane }}</td>
+        <td>{{ match.champion }}</td>
+        <td>{{ match.queue }}</td>
+        <td>{{ match.role }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

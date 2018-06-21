@@ -10,6 +10,8 @@ export class HomeComponent {
   id: string;
 
   onClickMe() {
-    this.router.navigate(['./summoner', this.id]);
+    if (!!this.id) {
+      this.router.navigate(['./summoner', this.id]);
+    }
   }
 }
