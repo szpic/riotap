@@ -3,8 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using riotapp.RiotConnector.Base;
+using riotapp.RiotConnector.Endpoints;
+using riotapp.RiotConnector.Interfaces;
 
-namespace my_new_app
+namespace riotapp
 {
     public class Startup
     {
@@ -25,6 +28,9 @@ namespace my_new_app
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddTransient<IRiotApiClient, RiotApiClient>();
+            services.AddTransient<ISummonerEndPoint, SummonerEndPoint>();
+            services.AddTransient<IMatchesEndPoint, MatchesEndPoint>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

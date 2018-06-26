@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
 
-namespace my_new_app.Controllers
+namespace riotapp.Controllers
 {
     [Route("api/[controller]")]
     public class SampleDataController : Controller

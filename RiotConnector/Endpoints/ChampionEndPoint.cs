@@ -1,13 +1,13 @@
-﻿using my_new_app.Dtos;
-using my_new_app.RiotConnector.Base;
-using my_new_app.RiotConnector.Requester;
+﻿using riotapp.Dtos;
+using riotapp.RiotConnector.Base;
+using riotapp.RiotConnector.Requester;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace my_new_app.RiotConnector.Endpoints
+namespace riotapp.RiotConnector.Endpoints
 {
     public class ChampionEndPoint : BaseEndPoint
     {

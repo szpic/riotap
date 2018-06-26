@@ -2,9 +2,9 @@
 
 <p *ngIf="!summoner"><em>Loading...</em></p>
 <p *ngIf="summoner">
-  Summoner name: {{summoner.name}}<br />
-  Summoner accountId: {{summoner.accountId}}<br />
-  Summoner level: {{summoner.summonerLevel}} <br />
+  Summoner name: {{summoner.summoner.name}}<br />
+  Summoner accountId: {{summoner.summoner.accountId}}<br />
+  Summoner level: {{summoner.summoner.summonerLevel}} <br />
 </p>
 <div  *ngIf="summoner.matches">
   <p> Match history</p>

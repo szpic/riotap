@@ -1,10 +1,10 @@
-﻿using my_new_app.Dtos;
-using my_new_app.RiotConnector.Requester;
+﻿using riotapp.Dtos;
+using riotapp.RiotConnector.Requester;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Linq;
 
-namespace my_new_app.RiotConnector.Endpoints
+namespace riotapp.RiotConnector.Endpoints
 {
     public class ChallengersEndPoint : BaseEndPoint
     {

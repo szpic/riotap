@@ -1,11 +1,11 @@
-﻿using my_new_app.RiotConnector.Base;
+﻿using riotapp.RiotConnector.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace my_new_app.RiotConnector.Requester
+namespace riotapp.RiotConnector.Requester
 {
     public class RiotApiRequest : RiotApiRequestBase
     {

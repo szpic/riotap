@@ -1,19 +1,28 @@
-﻿using my_new_app.Dtos;
+﻿using riotapp.Dtos;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using riotapp.RiotConnector.Interfaces;
+using riotapp.RiotConnector.Base;
 
-namespace my_new_app.RiotConnector.Endpoints
+namespace riotapp.RiotConnector.Endpoints
 {
-    public class MatchesEndPoint : BaseEndPoint
+    public class MatchesEndPoint : IMatchesEndPoint
     {
-        public MatchesEndPoint() => Url = @"https://eun1.api.riotgames.com/lol/match/v3/matchlists/by-account/";
-        public async Task<MatchListDto> GetMatches(string accountId)
+        private readonly string baseUrl;
+        private readonly IRiotApiClient client;
+
+        public MatchesEndPoint(IRiotApiClient client)
         {
-            var data = await client.MakeAsyncRequest(Url + accountId + "?beginIndex=0&endIndex=10").ConfigureAwait(false);
-            return JsonConvert.DeserializeObject<MatchListDto>(data);
+            this.client = client;
+            baseUrl = @"https://eun1.api.riotgames.com/lol/match/v3/matchlists/by-account/";
+        }
+
+        public Task<MatchListDto> ExecuteAsync(string accountId)
+        {
+            return client.GetAsAsync<MatchListDto>(baseUrl + accountId + "?beginIndex=0&endIndex=10");
         }
     }
 }

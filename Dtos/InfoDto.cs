@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace my_new_app.Dtos
+namespace riotapp.Dtos
 {
     public class InfoDto
     {

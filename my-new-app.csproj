@@ -10,6 +10,8 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <AssemblyName>riotapp</AssemblyName>
+    <RootNamespace>riotapp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,10 +32,6 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\challengers\challengers.component.ts" />
     <None Remove="ClientApp\src\app\summoner\summoner.component.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="RiotConnector\Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>
