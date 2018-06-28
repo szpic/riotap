@@ -31,6 +31,8 @@ namespace riotapp
             services.AddTransient<IRiotApiClient, RiotApiClient>();
             services.AddTransient<ISummonerEndPoint, SummonerEndPoint>();
             services.AddTransient<IMatchesEndPoint, MatchesEndPoint>();
+            services.AddTransient<IChallengersEndPoint, ChallengersEndPoint>();
+            services.AddTransient<IChampionEndPoint, ChampionEndPoint>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -12,7 +12,7 @@ namespace riotapp.RiotConnector.Base
         static Lazy<HttpClient> client = new Lazy<HttpClient>(() =>
         {
             var client = new HttpClient();
-            client.DefaultRequestHeaders.Add("X-Riot-Token", "RGAPI-638fa374-7649-4e4f-8d53-59d831848b32");
+            client.DefaultRequestHeaders.Add("X-Riot-Token", "RGAPI-1c957596-61c1-49af-b256-e077366c3876");
             return client;
         });
 

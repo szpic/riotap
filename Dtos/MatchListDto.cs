@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace riotapp.Dtos
 {
-    public class MatchListDto
+    public class MatchListDTO
     {
-        public List<matchReferenceDto> matches { get; set; }
+        public List<matchReferenceDTO> matches { get; set; }
         public int totalGames { get; set; }
         public int startIndex { get; set; }
         public int endIndex { get; set; }

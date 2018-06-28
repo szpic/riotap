@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using riotapp.Dtos;
 using riotapp.RiotConnector.Endpoints;
+using riotapp.RiotConnector.Interfaces;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,11 +10,16 @@ namespace riotapp.Controllers
     [Route("api/[controller]")]
     public class ChampionsListController : Controller
     {
-        [HttpGet("[action]")]
-        public async Task<ChampionDto> getChampionData()
+        private readonly IChampionEndPoint getChampions;
+
+        public ChampionsListController(IChampionEndPoint getChampions)
         {
-            ChampionEndPoint endpoint = new ChampionEndPoint();
-            return await endpoint.GetChampionData();
+            this.getChampions = getChampions;
+        }
+        [HttpGet("[action]")]
+        public async Task<ChampionDTO> getChampionData()
+        {
+            return await getChampions.ExecuteAsync();
         }
     }
 }

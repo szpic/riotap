@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace riotapp.Dtos
 {
-    public class ChampionDto
+    public class ChampionDTO
     {
         public InfoDto info { get; set; }
         public string name { get; set; }

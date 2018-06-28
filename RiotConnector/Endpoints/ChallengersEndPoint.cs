@@ -1,21 +1,27 @@
 ﻿using riotapp.Dtos;
-using riotapp.RiotConnector.Requester;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Linq;
+using riotapp.RiotConnector.Interfaces;
+using riotapp.RiotConnector.Base;
 
 namespace riotapp.RiotConnector.Endpoints
 {
-    public class ChallengersEndPoint : BaseEndPoint
+    public class ChallengersEndPoint : IChallengersEndPoint
     {
-        public ChallengersEndPoint() => Url = @"https://eun1.api.riotgames.com/lol/league/v3/challengerleagues/by-queue/RANKED_SOLO_5x5";
-        public async Task<LeagueListDTO> GetPlayersData()
+
+        private readonly string baseUrl;
+        private readonly IRiotApiClient client;
+
+        public ChallengersEndPoint(IRiotApiClient client)
         {
-            var data = await client.MakeAsyncRequest(url).ConfigureAwait(false);
-            var beforeOrdering= JsonConvert.DeserializeObject<LeagueListDTO>(data);
-            // data is unsorted so we order it by points descending
-            beforeOrdering.entries = beforeOrdering.entries.OrderByDescending(w => w.leaguePoints).ToList();
-            return beforeOrdering;
+            this.client = client;
+            baseUrl = @"https://eun1.api.riotgames.com/lol/league/v3/challengerleagues/by-queue/RANKED_SOLO_5x5";
+        }
+          
+        public Task<LeagueListDTO> ExecuteAsync()
+        {
+            return client.GetAsAsync<LeagueListDTO>(baseUrl);
         }
     }
 }

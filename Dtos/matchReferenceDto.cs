@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace riotapp.Dtos
 {
-    public class matchReferenceDto
+    public class matchReferenceDTO
     {
         public string lane { get; set; }
         public long gameId { get; set; }

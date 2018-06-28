@@ -20,9 +20,9 @@ namespace riotapp.RiotConnector.Endpoints
             baseUrl = @"https://eun1.api.riotgames.com/lol/match/v3/matchlists/by-account/";
         }
 
-        public Task<MatchListDto> ExecuteAsync(string accountId)
+        public Task<MatchListDTO> ExecuteAsync(string accountId)
         {
-            return client.GetAsAsync<MatchListDto>(baseUrl + accountId + "?beginIndex=0&endIndex=10");
+            return client.GetAsAsync<MatchListDTO>(baseUrl + accountId + "?beginIndex=0&endIndex=10");
         }
     }
 }

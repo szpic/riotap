@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace riotapp.Dtos
 {
-    public class FullSummonerDto
+    public class FullSummonerDTO
     {
         public SummonerDTO summoner { get; set; }
-        public MatchListDto matches { get; set; }
+        public MatchListDTO matches { get; set; }
     }
 }

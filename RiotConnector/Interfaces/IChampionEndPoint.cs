@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace riotapp.RiotConnector.Interfaces
 {
-    public interface IMatchesEndPoint :IAsyncFunction<string, MatchListDTO>
+    public interface IChampionEndPoint : IAsyncFunction<ChampionDTO>
     {
     }
 }

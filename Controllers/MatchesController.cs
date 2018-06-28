@@ -17,7 +17,7 @@ namespace riotapp.Controllers
         public MatchesController(IMatchesEndPoint getMatches) => this.getMatches = getMatches;
 
         [HttpGet("[action]/{name}")]
-        public async Task<MatchListDto> GetMatchesData(string name)
+        public async Task<MatchListDTO> GetMatchesData(string name)
         {
             return await getMatches.ExecuteAsync(name);
         }

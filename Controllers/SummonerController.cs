@@ -20,11 +20,11 @@ namespace riotapp.Controllers
         }
 
         [HttpGet("[action]/{name}")]
-        public async Task<FullSummonerDto> GetSummonerData(string name)
+        public async Task<FullSummonerDTO> GetSummonerData(string name)
         {
             SummonerDTO summonerData = await getSummonerData.ExecuteAsync(name);
-            MatchListDto matchesData = await getMatches.ExecuteAsync(summonerData.accountId.ToString());
-            return new FullSummonerDto()
+            MatchListDTO matchesData = await getMatches.ExecuteAsync(summonerData.accountId.ToString());
+            return new FullSummonerDTO()
             {
                 summoner = summonerData,
                 matches = matchesData
